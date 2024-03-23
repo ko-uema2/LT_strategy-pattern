@@ -6,8 +6,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "build:watch": "tsc -w",
-    "before": "tsc && node dist/before.js",
-    "after": "tsc && node dist/after.js"
+    "before": "tsc && node dist/before/before.js",
+    "after": "tsc && node dist/after/after.js"
   },
   "keywords": [],
   "author": "",

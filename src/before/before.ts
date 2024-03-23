@@ -24,14 +24,12 @@ readlineInterface.question("What is your name? ", (name) => {
       sound = "wan";
     } else if (species === "cat") {
       sound = "nyan";
-    } else if (species === "bird") {
-      sound = "chun";
     }
 
-    // Animalオブジェクトを作成
-    const animal: Animal = { name, species, sound };
-    // Animalオブジェクトを出力
-    console.log(animal);
+    console.log("\n");
+    console.log(`name : ${name}`);
+    console.log(`sound: ${sound}`);
+
     // readlineインターフェースを閉じる
     readlineInterface.close();
   });
