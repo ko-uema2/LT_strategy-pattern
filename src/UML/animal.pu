@@ -1,0 +1,30 @@
+@startuml
+
+class Animal {
+  +name: string
+  +species: Species
+  +sound: string
+  +getName(): string
+  +getSound(): string
+}
+
+class Dog {
+  +name: string
+  +species: Species = "dog"
+  +sound: string = "wan"
+  +getName(): string
+  +getSound(): string
+}
+
+class Cat {
+  +name: string
+  +species: Species = "cat"
+  +sound: string = "nyan"
+  +getName(): string
+  +getSound(): string
+}
+
+Dog --|> Animal
+Cat --|> Animal
+
+@enduml
