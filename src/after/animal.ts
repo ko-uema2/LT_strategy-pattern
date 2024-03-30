@@ -8,13 +8,16 @@ export type Species = "dog" | "cat";
  */
 interface Animal {
   name: string;
-  species: Species;
-  sound: string;
 
   /*
    * 動物の名前を取得する
    */
   getName(): string;
+
+  /**
+   * 動物の種類を取得する
+   */
+  getSpecies(): Species;
 
   /**
    * 動物の鳴き声を取得する
@@ -27,8 +30,6 @@ interface Animal {
  */
 class Dog implements Animal {
   name: string;
-  species: Species = "dog";
-  sound: string = "wan";
 
   /**
    * Dogクラスのコンストラクタ
@@ -47,11 +48,19 @@ class Dog implements Animal {
   }
 
   /**
+   * 犬の種類を取得する
+   * @returns {Species} 種類
+   */
+  getSpecies(): Species {
+    return "dog";
+  }
+
+  /**
    * 犬の鳴き声を取得する
    * @returns {string} 鳴き声
    */
   getSound(): string {
-    return this.sound;
+    return "wan";
   }
 }
 
@@ -60,8 +69,6 @@ class Dog implements Animal {
  */
 class Cat implements Animal {
   name: string;
-  species: Species = "cat";
-  sound: string = "nyan";
 
   /**
    * Catクラスのコンストラクタ
@@ -80,11 +87,19 @@ class Cat implements Animal {
   }
 
   /**
+   * 猫の種類を取得する
+   * @returns {Species} 種類
+   */
+  getSpecies(): Species {
+    return "cat";
+  }
+
+  /**
    * 猫の鳴き声を取得する
    * @returns {string} 鳴き声
    */
   getSound(): string {
-    return this.sound;
+    return "nyan";
   }
 }
 

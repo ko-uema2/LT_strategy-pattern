@@ -1,6 +1,7 @@
 import * as readline from "readline";
 
 // Animal型の定義
+// 可視化のために定義しているだけで、実際には使用していない
 type Animal = {
   name: string;
   species: string;

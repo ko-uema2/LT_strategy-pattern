@@ -15,6 +15,7 @@ readlineInterface.question("What is your name? ", (name) => {
     const animal = new animalMap[species as Species](name);
 
     // Animalオブジェクトの名前と鳴き声を出力
+    console.log("\n");
     console.log(`name : ${animal.getName()}`);
     console.log(`sound: ${animal.getSound()}`);
 
