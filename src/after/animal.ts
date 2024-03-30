@@ -1,7 +1,7 @@
 /**
  * 動物の種類を表す型
  */
-export type Species = "dog" | "cat";
+export type Species = "dog" | "cat" | "cow";
 
 /**
  * Animalインターフェース
@@ -23,6 +23,8 @@ interface Animal {
    * 動物の鳴き声を取得する
    */
   getSound(): string;
+
+  getFood(): string;
 }
 
 /**
@@ -37,6 +39,9 @@ class Dog implements Animal {
    */
   constructor(name: string) {
     this.name = name;
+  }
+  getFood(): string {
+    return "dog food";
   }
 
   /**
@@ -77,6 +82,9 @@ class Cat implements Animal {
   constructor(name: string) {
     this.name = name;
   }
+  getFood(): string {
+    throw new Error("Method not implemented.");
+  }
 
   /**
    * 猫の名前を取得する
@@ -103,6 +111,45 @@ class Cat implements Animal {
   }
 }
 
+class Cow implements Animal {
+  name: string;
+
+  /**
+   * Catクラスのコンストラクタ
+   * @param {string} name - 名前
+   */
+  constructor(name: string) {
+    this.name = name;
+  }
+  getFood(): string {
+    throw new Error("Method not implemented.");
+  }
+
+  /**
+   * 猫の名前を取得する
+   * @returns {string} 名前
+   */
+  getName(): string {
+    return this.name;
+  }
+
+  /**
+   * 猫の種類を取得する
+   * @returns {Species} 種類
+   */
+  getSpecies(): Species {
+    return "cow";
+  }
+
+  /**
+   * 猫の鳴き声を取得する
+   * @returns {string} 鳴き声
+   */
+  getSound(): string {
+    return "mow";
+  }
+}
+
 /**
  * 動物のマップ
  * キーは動物の種類、値は動物クラスのコンストラクタ
@@ -110,4 +157,5 @@ class Cat implements Animal {
 export const animalMap: { [key in Species]: new (name: string) => Animal } = {
   dog: Dog,
   cat: Cat,
+  cow: Cow,
 };

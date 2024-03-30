@@ -25,6 +25,8 @@ readlineInterface.question("What is your name? ", (name) => {
       sound = "wan";
     } else if (species === "cat") {
       sound = "nyan";
+    } else if (species === "cow") {
+      sound = "moo";
     }
 
     console.log("\n");
